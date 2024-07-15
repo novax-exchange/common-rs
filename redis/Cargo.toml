@@ -2,7 +2,7 @@
 name = "novax-redis"
 version = "0.0.0"
 edition = "2021"
-description = "rocksdb"
+description = "redis utils for novax-exchange"
 license = "Apache-2.0"
 
 

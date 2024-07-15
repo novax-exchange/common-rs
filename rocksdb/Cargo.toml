@@ -1,6 +1,6 @@
 [package]
 name = "novax-rocksdb"
-description = "rocksdb utils"
+description = "rocksdb utils for novax-exchange"
 version = "0.0.0"
 edition = "2021"
 license = "Apache-2.0"
