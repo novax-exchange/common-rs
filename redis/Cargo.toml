@@ -2,6 +2,9 @@
 name = "novax-redis"
 version = "0.0.0"
 edition = "2021"
+description = "rocksdb"
+license = "Apache-2.0"
+
 
 [dependencies]
 redis = { version = "0.25.4", features = ["aio", "tokio-comp"] }
