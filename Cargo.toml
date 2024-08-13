@@ -1,0 +1,7 @@
+[workspace]
+resolver = "2"
+members = [ 
+    "example", 
+    "novax-log",
+    "novax-services"
+]
