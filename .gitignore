@@ -14,3 +14,19 @@ Cargo.lock
 *.pdb
 .DS_Store
 **/.DS_Store
+/fluvio-stream
+fluvio-stream/
+
+private -->  regia
+
+aws --> 
+// aws <-- 
+// private crate --> 
+
+http --> 
+
+grc --> 
+
+
+CI --> CD --> 
+
