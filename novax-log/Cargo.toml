@@ -2,6 +2,8 @@
 name = "novax-log"
 version = "0.1.0"
 edition = "2021"
+description = "a common place for logging"
+license = "Apache-2.0"
 
 [dependencies]
 log = "0.4.22"
