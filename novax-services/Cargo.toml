@@ -8,7 +8,8 @@ license = "Apache-2.0"
 [dependencies]
 axum = { version = "0.7.5", features = ["multipart", "macros"] }
 futures = "0.3.30"
-novax-log = { path="../novax-log" }
+# novax-log = { path="../novax-log" }
+novax-log = { version="0.0.1" }
 prost = "0.13.1"
 prost-types = "0.13.1"
 serde = { version = "1.0.207", features = ["derive"] }
