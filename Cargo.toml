@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 members = [ 
-    "example", "fluvio-stream", 
+    "example",
     "novax-log",
     "novax-services"
 ]
