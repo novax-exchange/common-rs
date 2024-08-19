@@ -1,8 +1,8 @@
 [package]
 name = "novax-log"
+description = "a common place for logging"
 version = "0.0.1"
 edition = "2021"
-description = "a common place for logging"
 license = "Apache-2.0"
 
 [dependencies]
