@@ -20,7 +20,6 @@ jobs:
       - name: Publish
         run: |
           cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-          # cargo publish -p novax-log
           cargo publish -p novax-services
                     
 
