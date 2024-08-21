@@ -232,8 +232,13 @@ dependencies = [
 name = "example"
 version = "0.1.0"
 dependencies = [
- "novax-log",
- "novax-services",
+ "novax-grpc",
+ "novax-http",
+ "novax-log 0.0.21",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "tower-http",
 ]
 
 [[package]]
@@ -247,10 +252,6 @@ name = "fixedbitset"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
-
-[[package]]
-name = "fluvio-stream"
-version = "0.1.0"
 
 [[package]]
 name = "fnv"
@@ -642,19 +643,46 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "defc4c55412d89136f966bbb339008b474350e5e6e78d2714439c386b3137a03"
 
 [[package]]
-name = "novax-log"
+name = "novax-grpc"
 version = "0.1.0"
+dependencies = [
+ "tokio",
+ "tonic",
+ "tonic-build",
+]
+
+[[package]]
+name = "novax-http"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "novax-log"
+version = "0.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2df47ea3a62e0c03f32c640080504ebe99de055a41f8f183e6ba6971e44b1037"
+dependencies = [
+ "log",
+]
+
+[[package]]
+name = "novax-log"
+version = "0.0.21"
 dependencies = [
  "log",
 ]
 
 [[package]]
 name = "novax-services"
-version = "0.1.0"
+version = "0.0.21"
 dependencies = [
  "axum",
  "futures",
- "novax-log",
+ "novax-log 0.0.2",
  "prost",
  "prost-types",
  "serde",
@@ -949,18 +977,18 @@ checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
 name = "serde"
-version = "1.0.207"
+version = "1.0.208"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5665e14a49a4ea1b91029ba7d3bca9f299e1f7cfa194388ccc20f14743e784f2"
+checksum = "cff085d2cb684faa248efb494c39b68e522822ac0de72ccf08109abde717cfb2"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.207"
+version = "1.0.208"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6aea2634c86b0e8ef2cfdc0c340baede54ec27b1e46febd7f80dffb2aa44a00e"
+checksum = "24008e81ff7613ed8e5ba0cfaf24e2c2f1e5b8a0495711e44fcd4882fca62bcf"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -969,9 +997,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.124"
+version = "1.0.125"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "66ad62847a56b3dba58cc891acd13884b9c61138d330c0d7b6181713d4fce38d"
+checksum = "83c8e735a073ccf5be70aa8066aa984eaf2fa000db6c8d0100ae605b366d31ed"
 dependencies = [
  "itoa",
  "memchr",
@@ -1099,9 +1127,9 @@ dependencies = [
 
 [[package]]
 name = "tokio"
-version = "1.39.2"
+version = "1.39.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "daa4fb1bc778bd6f04cbfc4bb2d06a7396a8f299dc33ea1900cedaa316f467b1"
+checksum = "9babc99b9923bfa4804bd74722ff02c0381021eafa4db9949217e3be8e84fff5"
 dependencies = [
  "backtrace",
  "bytes",

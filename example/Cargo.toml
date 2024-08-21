@@ -5,4 +5,9 @@ edition = "2021"
 
 [dependencies]
 novax-log = { path="../novax-log" }
-novax-services = { path="../novax-services", default-features=false, features=["http"]  }
+novax-http = { path="../http" }
+novax-grpc = { path="../grpc" }
+serde = { workspace=true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tower-http = { version = "0.5.2", features = ["cors"] }
