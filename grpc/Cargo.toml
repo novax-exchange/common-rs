@@ -1,7 +1,9 @@
 [package]
 name = "novax-grpc"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+license = "Apache-2.0"
+description = "a grpc service stub"
 
 [dependencies]
 tonic = "0.12.1"
