@@ -23,7 +23,7 @@ jobs:
     needs: deploy
     name: Publishing log
     if: ${{ startsWith(github.ref, 'refs/tags/releases-log') }}
-    step:
+    steps:
       run: cargo publish -p novax-log
     
   publish-http:
