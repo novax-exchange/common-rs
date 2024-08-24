@@ -24,19 +24,19 @@ jobs:
     name: Publishing log
     if: ${{ startsWith(github.ref, 'refs/tags/releases-log') }}
     steps:
-      run: cargo publish -p novax-log
+      - run: cargo publish -p novax-log
     
   publish-http:
     needs: deploy
     name: Publishing http services
     if: ${{ startsWith(github.ref, 'refs/tags/releases-http') }}
     steps:
-      run: cargo publish -p novax-http
+      - run: cargo publish -p novax-http
     
   publish-grpc:
     needs: deploy
     name: Publishing grpc services
     if: ${{ startsWith(github.ref, 'refs/tags/releases-grpc') }}
     steps:
-      run: cargo publish -p novax-grpc
+      - run: cargo publish -p novax-grpc
 
