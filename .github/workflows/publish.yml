@@ -29,4 +29,3 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/tags/releases-grpc') }}
         run: cargo publish -p novax-grpc
 
-
