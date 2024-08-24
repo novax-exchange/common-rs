@@ -28,5 +28,3 @@ jobs:
       - name: Publishing grpc services
         if: ${{ startsWith(github.ref, 'refs/tags/releases-grpc') }}
         run: cargo publish -p novax-grpc
-
-
