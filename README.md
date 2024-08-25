@@ -8,9 +8,19 @@ common library crates
 1. git commit with corresponding changes
 2. create tag: git tag -a releases/0.0.1 -m "version 0.0.1"
 3. tag push with commits e.g. (git push origin "branches" --tags)
-
 ```
 </strike>
+
+##### Deprecated services
+<strike>
+
+```language
+novax-services will mark deprecated for future commits
+The corresponding services will be reside on its own package
+Such as http and grpc will become two projects instead of just one contains both
+```
+</strike>
+
 
 We'll be leverage the commit message to indicated whether the package will publish o crates.io
 following is an example to publish novax-log package
