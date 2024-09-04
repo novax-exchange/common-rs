@@ -2,8 +2,9 @@
 resolver = "2"
 members = [ 
     "example", 
-    "grpc", 
+    "grpc",
     "http",
+    "log",
     "kafka",
     "rdkafka",
     "scylla"
