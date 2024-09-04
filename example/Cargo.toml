@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-novax-log = { path="../novax-log" }
+novax-log = { path="../log" }
 novax-http = { path="../http" }
 novax-grpc = { path="../grpc" }
 serde = { workspace=true, features = ["derive"] }

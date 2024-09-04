@@ -974,10 +974,7 @@ dependencies = [
 
 [[package]]
 name = "novax-log"
-version = "0.0.21"
-dependencies = [
- "log",
-]
+version = "0.1.0"
 
 [[package]]
 name = "novax-rdkafka"
