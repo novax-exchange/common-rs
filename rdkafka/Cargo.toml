@@ -1,9 +1,10 @@
 [package]
-name = "novax-kafka"
+name = "novax-rdkafka"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-kafka = "0.10.0"
-rayon = "1.10.0"
+rdkafka = "0.36.2"
+
+[dev-dependencies]
 tokio = { version = "1.40.0", features = ["full"] }

@@ -1,9 +1,12 @@
 [workspace]
 resolver = "2"
 members = [ 
-    "example", "grpc", "http", "kafka",
-    "novax-log",
-    "novax-services"
+    "example", 
+    "grpc", 
+    "http",
+    "kafka",
+    "rdkafka",
+    "scylla"
 ]
 
 [workspace.dependencies]
@@ -11,3 +14,21 @@ thiserror = "1.0.63"
 serde = { version = "1.0.208", features = ["derive"] }
 serde_json = "1.0.125"
 tokio = { version = "1.39.3", features = ["full"] }
+## keep latest
+
+##### Order task
+## 1. Pub-Sub
+### 2. for any split project type remove it
+#### 3. merge intoo main until further notice (when major change Tag IT) --> MAIN <-- Rebase check
+##### 4. novax-exchange-rs <-- move from novax-own
+###### 5. if applicable rdkafka preferered. < rdkafka -- kafka preferred split for better version control >
+####### 6. split workspace ... (novax-services remove)
+
+####### 
+
+
+## 1. kakak serverless --> AWS <-- 
+
+## 2. Websocket --> from exchange <-- deal with it direct
+### kafka API incoimg --> message --> consumable
+#### marketing event --> unordered --> multible producer --> multiple consumer (SMS/Email)
