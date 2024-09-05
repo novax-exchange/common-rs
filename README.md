@@ -30,3 +30,14 @@ following is an example to publish novax-log package
 3. Within the commit message highlight the inclusion of "PUBLISH LOG ....."
 
 The workflow will be trigger once git push has invoked.
+
+##### sqlx vs diesel
+```language
+Key differences
+    diesel require the installation of individual lib to work with
+    sqlx on the other hand not require
+    to init migration of the database diesel will applied the diesel-migrations routine via its cli
+    similarly sqlx also come with sqlx-cli and almost identical migrations step applied.
+
+    both of these cli installed via cargo install
+```
