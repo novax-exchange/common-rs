@@ -1,0 +1,10 @@
+[package]
+name = "novax-websocket"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+futures-channel = "0.3.30"
+futures-util = "0.3.30"
+tokio = { version = "1.40.0", features = ["rt", "sync", "macros"] }
+tokio-tungstenite = { version = "0.23.1", features = ["native-tls"] } ## feature for wss

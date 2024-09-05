@@ -7,9 +7,9 @@ members = [
     "kafka", "log",
     "rdkafka",
     "scylla"
-, "sqlx-postgres"]
+]
 exclude = [
-    "sqlx-mysql", "sqlx-postgres"
+    "sqlx-mysql", "sqlx-postgres", "websocket"
 ]
 
 [workspace.dependencies]
