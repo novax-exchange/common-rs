@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 members = [ 
-    "example", 
+    "example",
     "grpc",
     "http",
     "kafka", "log",
@@ -9,7 +9,7 @@ members = [
     "scylla"
 ]
 exclude = [
-    "sqlx-mysql", "sqlx-postgres", "websocket"
+    "fulltext", "sqlx-mysql", "sqlx-postgres", "websocket"
 ]
 
 [workspace.dependencies]
