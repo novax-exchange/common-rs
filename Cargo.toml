@@ -9,7 +9,7 @@ members = [
     "scylla"
 ]
 exclude = [
-    "fulltext", "sqlx-mysql", "sqlx-postgres", "websocket"
+    "fulltext", "redis-async", "sqlx-mysql", "sqlx-postgres", "websocket"
 ]
 
 [workspace.dependencies]
