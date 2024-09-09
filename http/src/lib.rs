@@ -1,8 +1,6 @@
 use novax_tokio::tokio as tokio;
 
 use axum::Router;
-use tokio::sync::oneshot;
-use tokio::task::JoinHandle;
 use std::error::Error;
 use tokio::net::TcpListener;
 use core::future::Future;
@@ -22,25 +20,5 @@ pub async fn http_svc<F>(app: Router, addr: String, f: F) -> Result<(), Box::<dy
     rslt
 }
 
-pub fn ctrl_c_handler() -> Result::<(JoinHandle::<bool>, oneshot::Receiver::<bool>), std::io::Error> {
-    let (tx, rx) = oneshot::channel::<bool>();
-    Ok (
-        (
-            tokio::task::spawn_blocking(
-                move || {
-                    let _ = tokio::spawn(async move{
-                        tokio::signal::ctrl_c().await?;
-                        let _ = tx.send(true);
-                        Ok::<(), std::io::Error>(())
-                    });
-                    true
-                }
-            ),
-            rx
-        )
-    )
-}
-
 // re-export
-// pub use tokio;
 pub use axum;
