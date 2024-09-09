@@ -1,0 +1,9 @@
+[package]
+name = "novax-tokio"
+version = "0.0.1"
+edition = "2021"
+license = "Apache-2.0"
+description = "a tokio runtime stub"
+
+[dependencies]
+tokio = { version = "1.40.0", features = ["full"] }
