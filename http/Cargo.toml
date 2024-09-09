@@ -1,6 +1,6 @@
 [package]
 name = "novax-http"
-version = "0.0.1a"
+version = "0.0.2"
 edition = "2021"
 license = "Apache-2.0"
 description = "a http service stub"
