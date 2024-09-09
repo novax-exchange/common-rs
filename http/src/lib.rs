@@ -1,3 +1,5 @@
+use novax_tokio::tokio as tokio;
+
 use axum::Router;
 use tokio::sync::oneshot;
 use tokio::task::JoinHandle;
@@ -40,5 +42,5 @@ pub fn ctrl_c_handler() -> Result::<(JoinHandle::<bool>, oneshot::Receiver::<boo
 }
 
 // re-export
-pub use tokio;
+// pub use tokio;
 pub use axum;
