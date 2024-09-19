@@ -1,6 +1,6 @@
 use thiserror::Error;
 use novax_http::axum as axum;
-use novax_http::tokio as tokio;
+use novax_tokio::tokio as tokio;
 // cors
 use tower_http::cors::Any;
 use tower_http::cors::CorsLayer;
@@ -33,7 +33,7 @@ async fn start_svc(rx: tokio::sync::oneshot::Receiver::<bool>) -> HttpResult<()>
 }
 
 pub (crate) async fn main() -> HttpResult<()> {
-    let (ctrlc_h, rx) = novax_http::ctrl_c_handler()?; 
+    let (ctrlc_h, rx) = novax_tokio::ctrl_c_handler()?; 
     let runner_handle = tokio::spawn(async move{
         let _ = start_svc(rx).await;
     });

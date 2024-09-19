@@ -2,7 +2,7 @@
 resolver = "2"
 members = [
     "example",
-    "grpc", "http",
+    "grpc", "http", "https",
     "rdkafka", "kafka",
     "log",
     "scylla", "sqlx-mysql", "sqlx-postgres",

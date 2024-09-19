@@ -16,6 +16,11 @@ jobs:
     with:
       name: novax-http
     secrets: inherit
+  https:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-https
+    secrets: inherit
   grpc:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:
