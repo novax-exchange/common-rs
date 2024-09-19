@@ -6,13 +6,33 @@ on:
 
 
 jobs:
-
-
-  publish:
-    strategy:
-      matrix:
-        name: [novax-log, novax-http, novax-grpc, novax-sqlx-mysql, novax-sqlx-postgres, novax-tokio]
+  log:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:
-      name: ${{matrix.name}}
+      name: novax-log
+    secrets: inherit
+  http:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-http
+    secrets: inherit
+  grpc:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-grpc
+    secrets: inherit
+  mysql:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-sqlx-mysql
+    secrets: inherit
+  postgres:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-sqlx-postgres
+    secrets: inherit
+  tokio:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-tokio
     secrets: inherit

@@ -2,7 +2,8 @@
 name = "novax-sqlx-mysql"
 version = "0.1.0"
 edition = "2021"
-
+description = "mysql utility"
+license = "Apache-2.0"
 [dependencies]
 mysql_async = "0.34.2"
 sqlx = { version = "0.8.2", features = ["mysql", "runtime-tokio"] }

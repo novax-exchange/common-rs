@@ -2,7 +2,8 @@
 name = "novax-sqlx-postgres"
 version = "0.1.0"
 edition = "2021"
-
+description = "postgres utility"
+license = "Apache-2.0"
 [dependencies]
 sqlx = { version = "0.8.2", features = ["postgres", "runtime-tokio"] }
 

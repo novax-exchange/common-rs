@@ -1,15 +1,15 @@
 [workspace]
 resolver = "2"
-members = [ 
+members = [
     "example",
-    "grpc",
-    "http",
-    "kafka", "log",
-    "rdkafka",
-    "scylla", "tokio"
+    "grpc", "http",
+    "rdkafka", "kafka",
+    "log",
+    "scylla", "sqlx-mysql", "sqlx-postgres",
+    "tokio"
 ]
 exclude = [
-    "fulltext", "redis-async", "sqlx-mysql", "sqlx-postgres", "websocket"
+    "fulltext", "redis-async", "websocket",
 ]
 
 [workspace.dependencies]
