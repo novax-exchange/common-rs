@@ -1,41 +1,51 @@
 name: Action to publish to crate io
 
-on:
-  push:
-    branches: ["feature/reusable_unit", "main"]
+on: workflow_dispatch
 
 jobs:
-  deploy:
-    name: Deploy to crate-io
-    runs-on: Ubuntu-latest
-    if: contains( github.event.head_commit.message, 'PUBLISH')
+  log:
+    runs-on: ubuntu-latest
     steps:
-      - name: Check out
-        uses: actions/checkout@v4
-        # with:
-        #   token: ${{ secrets.PAT_TOKEN }}
-      - uses: dtolnay/rust-toolchain@stable
-      - uses: Swatinem/rust-cache@v2
+      - uses: actions/checkout@main
+      - uses: davidkhala/setup-rs@main
+      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
+      - run: cargo publish -p novax-log
+  http:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: davidkhala/setup-rs@main
+      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
+      - run: cargo publish -p novax-http
+
+  grpc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: davidkhala/setup-rs@main
+      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
+      - run: cargo publish -p novax-grpc
+
+  sqlx-mysql:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: davidkhala/setup-rs@main
       - name: Login crates.io
         run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-      - name: Publishing log
-        if:  contains( github.event.head_commit.message, 'PUBLISH LOG')
-        run: cargo publish -p novax-log
-      - name: Publishing http services
-        if:  contains( github.event.head_commit.message, 'PUBLISH HTTP')
-        run: cargo publish -p novax-http
-      - name: Publishing grpc services
-        if:  contains( github.event.head_commit.message, 'PUBLISH GRPC')
-        run: cargo publish -p novax-grpc
-      - name: Publishing sqlx-mysql services
-        if:  contains( github.event.head_commit.message, 'PUBLISH SQLX MYSQL')
-        run: cargo publish -p novax-sqlx-mysql
-      - name: Publishing sqlx-postgres services
-        if:  contains( github.event.head_commit.message, 'PUBLISH SQLX POSTGRES')
-        run: cargo publish -p novax-sqlx-postgres
-      - name: Publishing tokios services
-        if:  contains( github.event.head_commit.message, 'PUBLISH TOKIO')
-        run: cargo publish -p novax-tokio
+      - run: cargo publish -p novax-sqlx-mysql
 
-## remove workspace --> individual release project rather than workspace
-
+  sqlx-postgres:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: davidkhala/setup-rs@main
+      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
+      - run: cargo publish -p novax-sqlx-postgres
+  tokio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: davidkhala/setup-rs@main
+      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
+      - run: cargo publish -p novax-tokio

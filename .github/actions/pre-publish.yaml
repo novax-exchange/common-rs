@@ -1,0 +1,8 @@
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@main
+    - uses: dtolnay/rust-toolchain@master
+      with:
+        toolchain: stable
+    - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
