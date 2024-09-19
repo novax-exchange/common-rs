@@ -2,5 +2,7 @@
 name = "novax-log"
 version = "0.1.0"
 edition = "2021"
+description = "novax logging utility"
+license = "Apache-2.0"
 
 [dependencies]

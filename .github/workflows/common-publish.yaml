@@ -1,0 +1,20 @@
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+    secrets:
+      CRATES_IO_API_TOKEN:
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
+      - run: cargo publish -p ${{ inputs.name }}

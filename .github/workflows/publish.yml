@@ -4,19 +4,16 @@ on: workflow_dispatch
 
 jobs:
   log:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: davidkhala/setup-rs@main
-      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-      - run: cargo publish -p novax-log
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-log
+    secrets: inherit
+
   http:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: davidkhala/setup-rs@main
-      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-      - run: cargo publish -p novax-http
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-http
+    secrets: inherit
 
   grpc:
     runs-on: ubuntu-latest
