@@ -1,48 +1,18 @@
 name: Action to publish to crate io
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+
 
 jobs:
-  log:
+
+
+  publish:
+    strategy:
+      matrix:
+        name: [novax-log, novax-http, novax-grpc, novax-sqlx-mysql, novax-sqlx-postgres, novax-tokio]
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:
-      name: novax-log
+      name: ${{matrix.name}}
     secrets: inherit
-
-  http:
-    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
-    with:
-      name: novax-http
-    secrets: inherit
-
-  grpc:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: davidkhala/setup-rs@main
-      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-      - run: cargo publish -p novax-grpc
-
-  sqlx-mysql:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: davidkhala/setup-rs@main
-      - name: Login crates.io
-        run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-      - run: cargo publish -p novax-sqlx-mysql
-
-  sqlx-postgres:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: davidkhala/setup-rs@main
-      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-      - run: cargo publish -p novax-sqlx-postgres
-  tokio:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: davidkhala/setup-rs@main
-      - run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
-      - run: cargo publish -p novax-tokio
