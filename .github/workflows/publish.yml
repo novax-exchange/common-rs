@@ -36,6 +36,11 @@ jobs:
     with:
       name: novax-sqlx-postgres
     secrets: inherit
+  reqwest:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-reqwest
+    secrets: inherit
   tokio:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:

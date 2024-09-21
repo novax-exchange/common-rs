@@ -1,14 +1,19 @@
 [package]
 name = "novax-https"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 license = "Apache-2.0"
-description = "a https server service"
+description = "a https server service for mutual LTS"
 
 
 [dependencies]
 axum-server = { version = "0.7.1", features = ["rustls", "tls-rustls"] }
 novax-http = "0.0.2"
+rustls = "0.23.13"
+rustls-pemfile = "2.1.3"
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+
 
 [dev-dependencies]
 novax-tokio = "0.0.1"

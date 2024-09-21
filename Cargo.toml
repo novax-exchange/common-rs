@@ -4,7 +4,7 @@ members = [
     "example",
     "grpc", "http", "https",
     "rdkafka", "kafka",
-    "log",
+    "log", "reqwest",
     "scylla", "sqlx-mysql", "sqlx-postgres",
     "tokio"
 ]
