@@ -1,9 +1,7 @@
-name: Action to publish to crate io
+name: Publish to crate.io
 
 on:
   workflow_dispatch:
-  push:
-
 
 jobs:
   log:
