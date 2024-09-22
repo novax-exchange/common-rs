@@ -24,6 +24,11 @@ jobs:
     with:
       name: novax-grpc
     secrets: inherit
+  grpcs:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-grpcs
+    secrets: inherit
   mysql:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:

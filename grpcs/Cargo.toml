@@ -1,0 +1,17 @@
+[package]
+name = "novax-grpcs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tonic = { version = "0.12.2", features = ["tls", "router", "server"] }
+
+[dev-dependencies]
+novax-tokio = { version = "0.0.1" }
+prost = "0.13.3"
+prost-types = "0.13.3"
+
+
+[features]
+default = []
+tests = []
