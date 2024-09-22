@@ -10,5 +10,18 @@ novax-grpc = { path="../grpc" }
 serde = { workspace=true, features = ["derive"] }
 serde_json = { workspace = true }
 thiserror = { workspace = true }
-tower-http = { version = "0.5.2", features = ["cors"] }
+tower-http = { version = "0.6.0", features = ["cors"] }
 novax-tokio = { version = "0.0.1" }
+prost = "0.13.3"
+prost-types = "0.13.3"
+
+
+[build-dependencies]
+tonic-build = { version = "0.12.2", features = ["prost"] }
+
+
+[features]
+default = []
+build_script = []
+http = []
+grpc = []

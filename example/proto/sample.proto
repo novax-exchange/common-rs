@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package svc;
+
+message VoidMsg {}
+message RespMsg {
+    int32 code  = 1;
+    string resp = 2;
+}
+
+service SampleSvc {
+    rpc Call(VoidMsg) returns (RespMsg) {}
+}
