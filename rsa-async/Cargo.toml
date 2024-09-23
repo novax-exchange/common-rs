@@ -1,0 +1,11 @@
+[package]
+name = "novax-rsa-async"
+version = "0.0.1"
+edition = "2021"
+description = "async rsa crypto library for private and public key creation"
+license = "Apache-2.0"
+
+[dependencies]
+novax-tokio = { version = "0.0.1", path = "../tokio" }
+rand = "0.8.5"
+rsa = "0.9.6"

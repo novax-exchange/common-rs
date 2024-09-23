@@ -44,6 +44,16 @@ jobs:
     with:
       name: novax-reqwest
     secrets: inherit
+  rsa:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-rsa
+    secrets: inherit
+  rsa-async:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-rsa-async
+    secrets: inherit
   tokio:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:
