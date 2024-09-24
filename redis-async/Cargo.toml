@@ -1,7 +1,10 @@
 [package]
 name = "novax-redis-async"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+description = "redis async utils for novax-exchange"
+license = "Apache-2.0"
+repository = "https://github.com/novax-exchange/common-rs"
 
 [dependencies]
-redis = { version = "0.26.1", features = ["aio", "tokio-comp", "connection-manager"] }
+redis = { version = "0.27.2", features = ["aio", "tokio-comp", "connection-manager"] }

@@ -19,6 +19,7 @@ jobs:
     with:
       name: novax-https
     secrets: inherit
+  # grpc
   grpc:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:
@@ -29,6 +30,18 @@ jobs:
     with:
       name: novax-grpcs
     secrets: inherit
+  # kaffa
+  kafka:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-kafka
+    secrets: inherit
+  rdkafka:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-rdkafka
+    secrets: inherit
+  # database connectors
   mysql:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:
@@ -43,6 +56,17 @@ jobs:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:
       name: novax-reqwest
+    secrets: inherit
+  #redis, redis-async
+  redis:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-redis
+    secrets: inherit
+  redis-async:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-redis-async
     secrets: inherit
   rsa:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main

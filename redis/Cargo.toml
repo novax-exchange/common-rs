@@ -1,10 +1,11 @@
 [package]
 name = "novax-redis"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 description = "redis utils for novax-exchange"
 license = "Apache-2.0"
+repository = "https://github.com/novax-exchange/common-rs"
 
 
 [dependencies]
-redis = "0.25.4"
+redis = "0.27.2"
