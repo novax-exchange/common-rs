@@ -4,6 +4,7 @@ version = "0.0.1"
 edition = "2021"
 description = "grpcs for mutual TLS"
 license = "Apache-2.0"
+repository = "https://github.com/novax-exchange/common-rs"
 
 [dependencies]
 tonic = { version = "0.12.2", features = ["tls", "router", "server"] }

@@ -54,6 +54,11 @@ jobs:
     with:
       name: novax-rsa-async
     secrets: inherit
+  signature:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-signature
+    secrets: inherit
   tokio:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
     with:

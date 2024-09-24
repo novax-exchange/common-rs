@@ -1,0 +1,11 @@
+[package]
+name = "novax-signature"
+version = "0.0.1"
+edition = "2021"
+description = "crypto signature (digital signing cryptography)"
+license = "Apache-2.0"
+
+[dependencies]
+k256 = { version = "0.13.4", features = ["ecdsa", "sha256"] }
+rand = "0.8.5"
+rsa = "0.9.6"

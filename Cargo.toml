@@ -7,7 +7,7 @@ members = [
     "rdkafka", "kafka",
     "log", "reqwest", "rsa", "rsa-async", 
     "scylla", "sqlx-mysql", "sqlx-postgres",
-    "tokio"
+    "signature", "tokio"
 ]
 exclude = [
     "fulltext", "redis-async", "websocket",
