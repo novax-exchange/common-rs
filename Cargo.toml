@@ -5,12 +5,13 @@ members = [
     "grpc", "grpcs",
     "http", "https",
     "rdkafka", "kafka",
+    "redis", "redis-async"
     "log", "reqwest", "rsa", "rsa-async", 
     "scylla", "sqlx-mysql", "sqlx-postgres",
     "signature", "tokio"
 ]
 exclude = [
-    "fulltext", "redis-async", "websocket",
+    "fulltext", "websocket",
 ]
 
 [workspace.dependencies]
