@@ -8,7 +8,7 @@ members = [
     "redis", "redis-async",
     "log", "reqwest", "rsa", "rsa-async", 
     "scylla", "sqlx-mysql", "sqlx-postgres",
-    "signature", "tokio"
+    "signature", "storage", "tokio"
 ]
 exclude = [
     "fulltext", "websocket",
