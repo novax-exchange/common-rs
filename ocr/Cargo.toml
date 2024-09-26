@@ -1,0 +1,11 @@
+[package]
+name = "novax-ocr"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tesseract = "0.15.1"
+tokio = { workspace = true, features = ["rt", "rt-multi-thread", "macros", "sync", "test-util"] }
+
+# [dev-dependencies]
+# tokio = { workspace = true, features = ["rt", "rt-multi-thread", "macros", "sync", "test-util"] }

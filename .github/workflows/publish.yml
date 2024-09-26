@@ -41,6 +41,11 @@ jobs:
     with:
       name: novax-rdkafka
     secrets: inherit
+  ocr:
+    uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main
+    with:
+      name: novax-ocr
+    secrets: inherit
   # database connectors
   mysql:
     uses: novax-exchange/common-rs/.github/workflows/common-publish.yaml@main

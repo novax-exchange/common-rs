@@ -3,7 +3,7 @@ resolver = "2"
 members = [
     "example",
     "grpc", "grpcs",
-    "http", "https",
+    "http", "https", "ocr",
     "rdkafka", "kafka",
     "redis", "redis-async",
     "log", "reqwest", "rsa", "rsa-async", 
